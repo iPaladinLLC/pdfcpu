@@ -25,7 +25,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hhrutter/pdfcpu/pkg/pdfcpu"
+	"github.com/iPaladinLLC/pdfcpu/pkg/pdfcpu"
 )
 
 var inDir, outDir string

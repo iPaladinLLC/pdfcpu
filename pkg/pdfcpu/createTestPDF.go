@@ -22,7 +22,7 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/hhrutter/pdfcpu/pkg/filter"
+	"github.com/iPaladinLLC/pdfcpu/pkg/filter"
 )
 
 const testAudioFileWAV = "testdata/test.wav"

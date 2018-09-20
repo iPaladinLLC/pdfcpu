@@ -8,9 +8,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/hhrutter/pdfcpu/pkg/filter"
-	"github.com/hhrutter/pdfcpu/pkg/fonts/metrics"
-	"github.com/hhrutter/pdfcpu/pkg/types"
+	"github.com/iPaladinLLC/pdfcpu/pkg/filter"
+	"github.com/iPaladinLLC/pdfcpu/pkg/fonts/metrics"
+	"github.com/iPaladinLLC/pdfcpu/pkg/types"
 
 	"github.com/pkg/errors"
 )

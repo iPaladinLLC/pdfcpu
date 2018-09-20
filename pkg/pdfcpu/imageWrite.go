@@ -24,9 +24,9 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/hhrutter/pdfcpu/pkg/filter"
-	"github.com/hhrutter/pdfcpu/pkg/log"
-	"github.com/hhrutter/pdfcpu/tiff"
+	"github.com/iPaladinLLC/pdfcpu/pkg/filter"
+	"github.com/iPaladinLLC/pdfcpu/pkg/log"
+	"github.com/iPaladinLLC/pdfcpu/tiff"
 	"github.com/pkg/errors"
 )
 

@@ -1,9 +1,9 @@
 # pdfcpu: a golang pdf processor
 
-[![Build Status](https://travis-ci.org/hhrutter/pdfcpu.svg?branch=master)](https://travis-ci.org/hhrutter/pdfcpu)
-[![GoDoc](https://godoc.org/github.com/hhrutter/pdfcpu?status.svg)](https://godoc.org/github.com/hhrutter/pdfcpu)
-[![Coverage Status](https://coveralls.io/repos/github/hhrutter/pdfcpu/badge.svg?branch=master)](https://coveralls.io/github/hhrutter/pdfcpu?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/hhrutter/pdfcpu)](https://goreportcard.com/report/github.com/hhrutter/pdfcpu)
+[![Build Status](https://travis-ci.org/iPaladinLLC/pdfcpu.svg?branch=master)](https://travis-ci.org/iPaladinLLC/pdfcpu)
+[![GoDoc](https://godoc.org/github.com/iPaladinLLC/pdfcpu?status.svg)](https://godoc.org/github.com/iPaladinLLC/pdfcpu)
+[![Coverage Status](https://coveralls.io/repos/github/iPaladinLLC/pdfcpu/badge.svg?branch=master)](https://coveralls.io/github/iPaladinLLC/pdfcpu?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/iPaladinLLC/pdfcpu)](https://goreportcard.com/report/github.com/iPaladinLLC/pdfcpu)
 [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ![logo](resources/pdfchip3.png)
@@ -21,8 +21,8 @@ Version: 0.1.15
 * Optional intelligent rotation aligns the rotation angle with one of two page diagonals.
 * `-pages` now also supports `odd/even`. (You can even say `-pages odd,n1` if you want to stamp all odd pages other than the title page.)
 * `extract -mode image` is now natively supporting PNG and TIFF with optional lzw compression.
-* [github.com/hhrutter/pdfcpu/lzw](https://github.com/hhrutter/pdfcpu/tree/master/lzw) is an improved version of `compress/lzw`. (There is a [golang proposal](https://github.com/golang/go/issues/25409).)
-* [github.com/hhrutter/pdfcpu/tiff](https://github.com/hhrutter/pdfcpu/tree/master/tiff) is an improved version of golang.org/x/image/tiff.
+* [github.com/iPaladinLLC/pdfcpu/lzw](https://github.com/iPaladinLLC/pdfcpu/tree/master/lzw) is an improved version of `compress/lzw`. (There is a [golang proposal](https://github.com/golang/go/issues/25409).)
+* [github.com/iPaladinLLC/pdfcpu/tiff](https://github.com/iPaladinLLC/pdfcpu/tree/master/tiff) is an improved version of golang.org/x/image/tiff.
 * Bug fixes.
 
 ## Motivation
@@ -59,7 +59,7 @@ One example is reducing the size of large PDF files for mass mailings by optimiz
 
 Required build version: go1.9 and up
 
-`go get github.com/hhrutter/pdfcpu/cmd/...`
+`go get github.com/iPaladinLLC/pdfcpu/cmd/...`
 
 ## Usage
 
@@ -87,7 +87,7 @@ Required build version: go1.9 and up
 
     pdfcpu version
 
- [Please read the documentation](https://godoc.org/github.com/hhrutter/pdfcpu)
+ [Please read the documentation](https://godoc.org/github.com/iPaladinLLC/pdfcpu)
 
 ## Contributing
 

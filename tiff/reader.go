@@ -17,7 +17,7 @@ import (
 	"io/ioutil"
 	"math"
 
-	"github.com/hhrutter/pdfcpu/lzw"
+	"github.com/iPaladinLLC/pdfcpu/lzw"
 )
 
 // A FormatError reports that the input is not a valid TIFF image.

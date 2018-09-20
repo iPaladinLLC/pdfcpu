@@ -24,8 +24,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/hhrutter/pdfcpu/pkg/filter"
-	"github.com/hhrutter/pdfcpu/pkg/log"
+	"github.com/iPaladinLLC/pdfcpu/pkg/filter"
+	"github.com/iPaladinLLC/pdfcpu/pkg/log"
 	"github.com/pkg/errors"
 )
 

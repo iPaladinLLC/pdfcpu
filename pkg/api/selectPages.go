@@ -22,8 +22,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/hhrutter/pdfcpu/pkg/log"
-	"github.com/hhrutter/pdfcpu/pkg/pdfcpu"
+	"github.com/iPaladinLLC/pdfcpu/pkg/log"
+	"github.com/iPaladinLLC/pdfcpu/pkg/pdfcpu"
 	"github.com/pkg/errors"
 )
 

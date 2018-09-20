@@ -24,8 +24,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/hhrutter/pdfcpu/pkg/filter"
-	"github.com/hhrutter/pdfcpu/pkg/log"
+	"github.com/iPaladinLLC/pdfcpu/pkg/filter"
+	"github.com/iPaladinLLC/pdfcpu/pkg/log"
 )
 
 func parmsForFilter(d *PDFDict) map[string]int {
