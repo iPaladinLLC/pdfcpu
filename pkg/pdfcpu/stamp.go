@@ -94,8 +94,9 @@ type Watermark struct {
 	form    *PDFIndirectRef // Forms are dependent on given page dimensions.
 
 	// house keeping
-	objs   IntSet    // objects for which wm has been applied already.
-	fCache formCache // form cache.
+	objs          IntSet    // objects for which wm has been applied already.
+	fCache        formCache // form cache.
+	allowOverride bool      // false - error when watermarked file will be processed, true = no error and old watermark will be overridden
 }
 
 func (wm Watermark) String() string {
@@ -430,6 +431,15 @@ func parseWatermarkRenderMode(v string, wm *Watermark) error {
 	return nil
 }
 
+func SimpleImageWatermark(s string) *Watermark {
+	return &Watermark{
+		imageFileName: s,
+		objs:          IntSet{},
+		fCache:        formCache{},
+		allowOverride: true,
+	}
+}
+
 // ParseWatermarkDetails parses a Watermark/Stamp command string into an internal structure.
 func ParseWatermarkDetails(s string, onTop bool) (*Watermark, error) {
 
@@ -683,7 +693,7 @@ func prepareOCPropertiesInRoot(rootDict *PDFDict, wm *Watermark) error {
 	}
 
 	_, ok := rootDict.Find("OCProperties")
-	if !ok {
+	if !ok || wm.allowOverride {
 		rootDict.Insert("OCProperties", d)
 		return nil
 	}
