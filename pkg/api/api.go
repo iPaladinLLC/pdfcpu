@@ -1109,9 +1109,21 @@ func AddWatermarks(cmd *Command) ([]string, error) {
 
 	fromStart := time.Now()
 
-	ctx, durRead, durVal, durOpt, err := readValidateAndOptimize(fileIn, config, fromStart)
-	if err != nil {
-		return nil, err
+	var (
+		ctx                     *pdfcpu.PDFContext
+		durRead, durVal, durOpt float64
+		err                     error
+	)
+	if wm.IgnorePdfOptimization() {
+		ctx, durRead, durVal, err = readAndValidate(fileIn, config, fromStart)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		ctx, durRead, durVal, durOpt, err = readValidateAndOptimize(fileIn, config, fromStart)
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	fmt.Printf("%sing %s ...\n", wm.OnTopString(), fileIn)

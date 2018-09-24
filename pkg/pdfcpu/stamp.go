@@ -94,9 +94,10 @@ type Watermark struct {
 	form    *PDFIndirectRef // Forms are dependent on given page dimensions.
 
 	// house keeping
-	objs          IntSet    // objects for which wm has been applied already.
-	fCache        formCache // form cache.
-	allowOverride bool      // false - error when watermarked file will be processed, true = no error and old watermark will be overridden
+	objs               IntSet    // objects for which wm has been applied already.
+	fCache             formCache // form cache.
+	allowOverride      bool      // false - error when watermarked file will be processed, true = no error and old watermark will be overridden
+	ignoreOptimization bool      // true - force not to run pdf optimization code
 }
 
 func (wm Watermark) String() string {
@@ -122,7 +123,9 @@ func (wm Watermark) String() string {
 		"renderMode: %d\n"+
 		"bbox:%s\n"+
 		"vp:%s\n"+
-		"pageRotation: %f\n",
+		"pageRotation: %f\n"+
+		"allowOverride: %t\n"+
+		"ignoreOptimization: %t\n",
 		t, s,
 		wm.fontName, wm.fontSize,
 		wm.scale, sc,
@@ -134,7 +137,13 @@ func (wm Watermark) String() string {
 		wm.bb,
 		wm.vp,
 		wm.pageRot,
+		wm.allowOverride,
+		wm.ignoreOptimization,
 	)
+}
+
+func (wm Watermark) IgnorePdfOptimization() bool {
+	return wm.ignoreOptimization
 }
 
 // OnTopString returns "watermark" or "stamp" whichever applies.
@@ -431,12 +440,13 @@ func parseWatermarkRenderMode(v string, wm *Watermark) error {
 	return nil
 }
 
-func SimpleImageWatermark(s string) *Watermark {
+func SimpleImageWatermark(fPath string) *Watermark {
 	return &Watermark{
-		imageFileName: s,
-		objs:          IntSet{},
-		fCache:        formCache{},
-		allowOverride: true,
+		imageFileName:      fPath,
+		objs:               IntSet{},
+		fCache:             formCache{},
+		allowOverride:      true,
+		ignoreOptimization: true,
 	}
 }
 
