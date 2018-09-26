@@ -447,6 +447,14 @@ func SimpleImageWatermark(fPath string) *Watermark {
 		fCache:             formCache{},
 		allowOverride:      true,
 		ignoreOptimization: true,
+		fontName:           "Helvetica",
+		fontSize:           24,
+		scale:              0.5,
+		scaleAbs:           false,
+		color:              simpleColor{0.5, 0.5, 0.5}, // gray
+		diagonal:           diagonalLLToUR,
+		opacity:            1.0,
+		renderMode:         rmFill,
 	}
 }
 
